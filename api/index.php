@@ -13,8 +13,5 @@ if(isset($_SERVER['HTTP_REFERER'])==true){curl_setopt($ch, CURLOPT_REFERER, $_SE
 $data_down = curl_exec($ch);
 if($data_down  === FALSE){die("代理时发生错误");}
 curl_close($ch);
-file_put_contents($token, $data_down);
-header('Content-Type: '.mime_content_type($token));
-unlink($token);
 echo $data_down;
 ?>
